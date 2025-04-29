@@ -4,8 +4,7 @@
 
 1. **Page d’accueil**
    - Menu déroulant, sans aucun plugin
-   - Feed d'articles ou posts (selon l'API utilisée) contenant un formulaire pour pouvoir ajouter dynamiquement un article ou un post
-   - Possibilité d'effacer un article/post que l'on a ajouté manuellement
+   - Feed d'articles ou posts (selon l'API utilisée) contenant un formulaire pour pouvoir ajouter dynamiquement un article ou un post et la possibilité d'effacer un article/post que l'on a ajouté manuellement
 
 2. **Formulaire dynamique**
    - Ajout d’un post avec :

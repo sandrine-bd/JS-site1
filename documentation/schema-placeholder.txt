@@ -1,9 +1,0 @@
-Dépose ici :
-- Mockups des pages (ex : accueil, galerie, jeux)
-- Schéma d'architecture (front/backend, DB)
-- Wireframes de formulaires ou interactions
-
-Exemples :
-- accueil-mockup.png
-- galerie-wireframe.pdf
-- schéma-api.svg

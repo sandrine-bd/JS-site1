@@ -1,23 +1,21 @@
 # 🌐 1er site créé avec JavaScript
 Exercice de création de site avec des **fonctionnalités dynamiques**.
-Ce dépôt contient le code source, la documentation et la structure de projet :
-* page d’accueil disposant d'un feed
-* page Gallery
-* page Jeux
+Ce dépôt contient le code source, la documentation et la structure de projet.
 
 ## 🎯 Fonctionnalités principales
 
 - 🏠 Page d’accueil avec :
   - Un menu déroulant 
-  - Un feed (mur d'articles / posts)
+  - Un feed (mur d'articles ou posts) contenant un ✍️ formulaire dynamique 
 
-- ✍️ Formulaire dynamique pour créer un article/post
+- 🖼 Galerie photos avec :
+  - 2 modes d’affichage
+  - Possibilité d'ajouter des images et les supprimer
+  - Publicité
 
-- 🖼 Galerie photos avec modes d’affichage :
-  - Mosaïque
-  - Colonne
-
-- 🎮 Page Jeux 
+- 🎮 Page Jeux :
+  - Démineur
+  - Jeu de l'oie
 
 ## 📁 Documentation
 
