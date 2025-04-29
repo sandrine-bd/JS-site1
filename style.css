@@ -1,0 +1,28 @@
+/* couleurs buttercup :
+    '50': '#fefae8',
+    '100': '#fdf2c4',
+    '200': '#fbe28d',
+    '300': '#f9ca4b',
+    '400': '#f5b21b',
+    '500': '#e5990d',
+    '600': '#c67408',
+    '700': '#9e510a',
+    '800': '#824111',
+    '900': '#6f3514',
+    '950': '#411a07',
+*/
+
+body {
+    background-color: #fefae8;
+    margin: 6vw;
+}
+
+h1, h2 {
+    color: #9e510a;
+    font-family: 'Cal Sans';
+}
+
+p {
+    color: #411a07;
+    font-family: Geneva, sans-serif;
+}
