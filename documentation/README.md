@@ -4,7 +4,7 @@ Ce répertoire centralise toute la documentation technique et fonctionnelle du p
 
 ## Fichiers inclus
 
-- [`structure.md`](./strucure.md) : Structure du site
+- [`structure.md`](./structure.md) : Structure du site
 - [`milestones.md`](./milestones.md) : Planning du projet
 - [`conventions-commits.md`](./conventions-commits.md) : Règles de commit
 - [`bug-reports.md`](./issues/bug_report.md) : Signaler un comportement inattendu

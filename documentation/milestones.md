@@ -9,8 +9,8 @@
 | Formulaire dynamique   | Formulaire dans le feed pour ajouter article       | 13/05/2025    |
 | Galerie                | Galerie avec options d'affichage mosaïque/colonne  | 14/05/2025    |
 | Galerie : images       | Fonctionnalité pour ajouter une image à la galerie | 15/05/2025    |
-| Option effacer         | Effacer un article (feed) et une image (falerie)   | 15/05/2025    |
-| Pub                    | Créer un pub sur la page galerie                   | 16/05/2025    |
+| Option effacer         | Effacer un article (feed) et une image (galerie)   | 15/05/2025    |
+| Pub                    | Créer une pub sur la page galerie                  | 16/05/2025    |
 | Jeux                   | Intégrer des jeux sur la page Jeux                 | 16/05/2025    |
 
 ## Board Kanban
