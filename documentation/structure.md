@@ -5,11 +5,11 @@
    - Feed d'articles ou posts (selon l'API utilisée) contenant un formulaire pour pouvoir ajouter dynamiquement un article ou un post et la possibilité d'effacer un article/post que l'on a ajouté manuellement
 
 2. **Formulaire dynamique**
-   - Ajout d’un post avec :
+   - Ajout d’un aticle avec :
      - Titre
      - Contenu
      - Image
-     - Validation JS ou backend
+   - Possibilité d'effacer un article qu'on a ajouté manuellement
 
 3. **Galerie photos**
    - Options d'affichage mosaïque ou colonne, sans aucun plugin
