@@ -27,3 +27,16 @@ p {
     color: #411a07;
     font-family: Geneva, sans-serif;
 }
+
+.feed {
+    border: 1px solid #fdf2c4;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  .refresh {
+    cursor: pointer;
+    margin-bottom: 20px;
+    display: inline-block;
+  }
