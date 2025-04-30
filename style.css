@@ -15,6 +15,7 @@
 body {
     background-color: #fefae8;
     margin: 6vw;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 h1, h2 {
@@ -23,27 +24,44 @@ h1, h2 {
     font-size: 10vw;
 }
 
-p {
-    color: #411a07;
-    font-family: Geneva, sans-serif;
-}
-
 .feed {
-    border: 1px solid #fdf2c4;
-    margin-bottom: 10px;
-    padding: 10px;
-    border-radius: 5px;
+    margin-bottom: 3em;
+    border-radius: 2em;
   }
 
-  #refresh-btn {
+#refresh-btn {
     cursor: pointer;
-    margin-bottom: 20px;
-    display: inline-block;
+    margin-bottom: 3em;
+    padding: 0.7em;
     border: 0;
+    border-radius: 8px;
     color: #fefae8;
     background-color: #e5990d;
-    border-radius: 2vw;
-    padding: 1vw;
-    font-size: 2vw;
-    font-family: Geneva, sans-serif;
-  }
+    font-size: medium;
+    font-weight: bold;
+}
+
+.user-card {
+    display: flex;
+    align-items: flex-start;
+    font-size: medium;
+    gap: 1em; /*  espaces entre les lignes et entre les colonnes d'une grille */
+    border: 1px solid #e5990d;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    padding: 1em;
+    max-width: 100%; /* ne pas dépasser le contenu parent */
+}
+
+.user-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.5; /* espace entre les lignes */
+    word-break: break-word; 
+}
