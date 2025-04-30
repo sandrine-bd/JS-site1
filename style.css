@@ -35,8 +35,15 @@ p {
     border-radius: 5px;
   }
 
-  .refresh {
+  #refresh-btn {
     cursor: pointer;
     margin-bottom: 20px;
     display: inline-block;
+    border: 0;
+    color: #fefae8;
+    background-color: #e5990d;
+    border-radius: 2vw;
+    padding: 1vw;
+    font-size: 2vw;
+    font-family: Geneva, sans-serif;
   }
