@@ -1,3 +1,22 @@
+
+// Déroulement du menu
+document.querySelector('.dropdown-btn').addEventListener('click', function() {
+  const menu = document.querySelector('.dropdown-content');
+  menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+});
+  
+  /* if (menu.style.display === 'block') {
+    menu.style.display = 'none';
+  } else {
+    menu.style.display = 'block';
+ } */
+
+// Fonction pour passer la 1ère lettre du prénom en majuscule
+function capitalize(word) {
+  if (typeof word !== 'string') return '';
+  return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+}
+
 // Fonction pour charger les articles
 async function showUser() {
   try { 
@@ -24,11 +43,12 @@ async function showUser() {
       const info = document.createElement('div');
       info.classList.add('user-info');
 
+      const firstName = capitalize(userData.name.first);
       const name = document.createElement('div');
-      name.innerHTML = `<strong> ${userData.name.first} ${userData.name.last.toUpperCase()} </strong>`;
+      name.innerHTML = `<strong> ${firstName} ${userData.name.last.toUpperCase()} </strong>`; // innerHTML et pas textContent car il y a du strong
 
       const email= document.createElement('div');
-      email.textContent = ` 📧 ${userData.email}`;
+      email.textContent = `📧 ${userData.email}`;
 
       const phone = document.createElement('div');
       phone.textContent = `📞 ${userData.phone}`;
@@ -50,4 +70,7 @@ async function showUser() {
 document.addEventListener('DOMContentLoaded', showUser);
 
 // Appel lors du clic sur le bouton d'actualisation
-document.getElementById('refresh-btn').addEventListener('click', showUser);
+document.querySelector('.refresh-btn').addEventListener('click', showUser);
+
+
+
