@@ -97,7 +97,7 @@ function createUserForm() {
   inputLastName.required = true;
 
   const labelLastName = document.createElement('label');
-  labelLastName.textContent = 'NOM';
+  labelLastName.textContent = 'Nom';
   labelLastName.appendChild(inputLastName);
 
   // Email

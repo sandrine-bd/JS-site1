@@ -41,6 +41,10 @@ h1, h2 {
     font-weight: bold;
 }
 
+.refresh-btn:hover {
+    background-color: #c67408;
+}
+
 .user-card {
     display: flex;
     align-items: center;
@@ -102,4 +106,52 @@ h1, h2 {
 
 .dropdown-content a:hover {
     color: #fbe28d;
+}
+
+.form-container {
+    font-size: medium;
+    border: 1px solid #e5990d;
+    border-radius: 8px;
+    padding: 1em;
+    padding-top: 2em;
+    padding-bottom: 0;
+    max-width: 100%; 
+}
+
+.form-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1em;
+}
+
+.form-container label {
+    font-weight: bold;
+}
+
+.form-container input {
+    padding: 0.3em;
+    margin-left: 1em;
+    border: 1px solid;
+    border-radius: 6px;
+    font-size: medium;
+}
+
+.form-container input[type='file'] {
+    border: none;
+}
+
+.form-container button {
+    cursor: pointer;
+    margin-bottom: 3em;
+    padding: 0.7em;
+    border: 0;
+    border-radius: 8px;
+    color: #fefae8;
+    background-color: #e5990d;
+    font-size: medium;
+    font-weight: bold;
+}
+
+.form-container button:hover {
+    background-color: #c67408;
 }
