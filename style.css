@@ -155,3 +155,21 @@ h1, h2 {
 .form-container button:hover {
     background-color: #c67408;
 }
+
+.grid-btn, .column-btn {
+    cursor: pointer;
+    padding: 0.5em;
+    margin: 0.5em;
+    margin-left: 0;
+    margin-bottom: 2em;
+    border: 0;
+    border-radius: 8px;
+    color: #fefae8;
+    background-color: #e5990d;
+    font-size: x-large;
+}
+
+.grid-btn:hover, .column-btn:hover {
+    background-color: #c67408;
+}
+

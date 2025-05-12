@@ -30,7 +30,7 @@ async function showUser() {
   try { 
     const response = await fetch("https://randomuser.me/api/0.8/?results=10");
     const data = await response.json();
-    const users = data.results;
+    const users = data.results.slice(0,6);
     console.log(users);
 
   // Affiche les utilisateurs dans le DOM
@@ -192,4 +192,3 @@ function createUserForm() {
   const formContainer = document.querySelector('.form-container');
   formContainer.appendChild(form);
 };
-
