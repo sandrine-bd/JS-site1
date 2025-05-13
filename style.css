@@ -156,7 +156,7 @@ h1, h2 {
     background-color: #c67408;
 }
 
-.grid-btn, .column-btn {
+.grid-btn, .column-btn, .add-btn {
     cursor: pointer;
     padding: 0.5em;
     margin: 0.5em;
@@ -173,3 +173,14 @@ h1, h2 {
     background-color: #c67408;
 }
 
+.galerie-img {
+    width: 24vw;
+    height: 24vw;
+    margin: 10px;
+    object-fit: cover; /* recadre l’image proprement dans le cadre défini, sans la déformer */
+}
+
+.toolbar {
+    display: flex;
+    justify-content: space-between; /* boutons aux extrémités */
+}
