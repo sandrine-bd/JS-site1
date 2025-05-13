@@ -32,11 +32,23 @@ function addPicture() {
     if (file) { // vérifie qu'un fichier a bien été sélectionné
       const reader = new FileReader(); // objet spécial de JS qui lit le contenu du fichier et le transforme en format affichable
       reader.onload = function(e) { // une fois que la lecture du fichier est terminée
+        const container = document.createElement('div'); // on crée une div pour contenir la nouvelle photo et le bouton Supprimer 
+        container.classList.add('image-container');
+        
         const img = document.createElement('img');
         img.src = e.target.result; // image transformée en URL base64 (permet de l'afficher immédiatement sans l'envoyer sur un serveur)
-        img.alt = 'Image ajoutée';
+        img.alt = 'Photo ajoutée';
         img.classList.add('galerie-img');
-        gallery.appendChild(img);
+
+        const button = document.createElement('button');
+        button.textContent = 'Supprimer la photo';
+        button.addEventListener('click', () => { // supprime l'ensemble photo + bouton au clic 
+          container.remove();
+        });
+
+        container.appendChild(img);
+        container.appendChild(button);
+        gallery.appendChild(container);
       };
       reader.readAsDataURL(file); // convertit l'image en base64
     }
