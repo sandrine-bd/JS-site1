@@ -177,9 +177,15 @@ function createUserForm() {
     const telDiv = document.createElement('div');
     telDiv.textContent = `📞 ${tel}`;
 
+    const deleteBtn = document.createElement('button');
+    deleteBtn.textContent = "Supprimer l'utilisateur";
+    deleteBtn.classList.add('delete-btn');
+
     info.appendChild(nameDiv);
     info.appendChild(emailDiv);
     info.appendChild(telDiv);
+    info.appendChild(deleteBtn);
+    deleteBtn.addEventListener('click', deleteUser)
 
     card.appendChild(img);
     card.appendChild(info);
@@ -192,3 +198,9 @@ function createUserForm() {
   const formContainer = document.querySelector('.form-container');
   formContainer.appendChild(form);
 };
+
+function deleteUser(event) {
+  const button = event.target; // le bouton sur lequel on a cliqué
+  const card = button.closest('.user-card'); // cherche le bouton le plus proche avec la classe user-card
+  card.remove(); // on la supprime du DOM
+}

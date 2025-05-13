@@ -184,3 +184,19 @@ h1, h2 {
     display: flex;
     justify-content: space-between; /* boutons aux extrémités */
 }
+
+.delete-btn {
+    cursor: pointer;
+    padding: 0.4em;
+    margin-top: 0.8em;
+    border: 0;
+    border-radius: 8px;
+    color: #fefae8;
+    background-color: #e5990d;
+    font-size: medium;
+    font-weight: bold;
+}
+    
+.delete-btn:hover {
+    background-color: #c67408;
+}
