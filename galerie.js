@@ -110,3 +110,13 @@ async function createGallery() {
   }
   
   document.addEventListener('DOMContentLoaded', createGallery);
+
+  // Carrousel
+  let currentIndex = 0; // stocke la position de l'image actuellement visible
+  const slides = document.querySelector('.slides'); // rangée d'images horizontales
+  const totalSlides = slides.children.length;
+
+  setInterval(() => {
+    currentIndex = (currentIndex + 1) % totalSlides; // %totalSlides permet de revenir à 0 quand on dépasse le dernier index
+    slides.style.transform = `translateX(-${currentIndex *100}vw)`; //
+  }, 3000); // exécute la fonction toutes les 3 secondes (3000 millisecondes)

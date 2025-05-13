@@ -222,3 +222,21 @@ h1, h2 {
 .image-container button:hover {
     background-color: #c67408;
 }
+
+.carrousel {
+    width: 85vw;
+    height: 20vw;
+    overflow: hidden; /* cache ce qui dépasse */
+    margin-bottom: 5vw;
+}
+
+.slides {
+    display: flex;
+    width: 350%; /* 100% x nombre d'images => crée une rangée d'images horizontales que l'on enveloppe dans un autre div Carrousel */
+    transition: transform 0.5s ease-in-out;
+}
+
+.slides img {
+    width: 100vw;
+    height: 50vw;
+}
