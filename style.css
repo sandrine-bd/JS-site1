@@ -238,5 +238,6 @@ h1, h2 {
 
 .slides img {
     width: 100vw;
-    height: 50vw;
+    height: 70vw;
+    object-fit: cover;
 }
