@@ -1,0 +1,290 @@
+let centerX = new Array(64);
+let centerY = 90;
+let circleColor = color(135, 233, 144);
+let specialRule = "";
+let messageTurn = "";
+let gameOver = false;
+let currentPlayer = 0;
+let positionPlayers = new Array(4);
+let hotelPenalty = new Array(4);
+let wellPenalty = new Array(4);
+let prisonPenalty = new Array(4);
+function setup() {
+    createCanvas(1800, 350);
+    for (let i = 0; i < centerX.length; i++) {
+        centerX[i] = 50 + i * 27;
+    }
+}
+function draw() {
+    background(255);
+    drawSquare();
+    drawPlayers();
+    drawPlay();
+    fill(0);
+    textSize(24);
+    text("Tour du joueur " + (currentPlayer + 1), 100, 240);
+    text(messageTurn, 500, 240);
+    fill(circleColor);
+    textSize(24);
+    text(specialRule, 900, 240);
+    if (gameOver) {
+        fill(circleColor);
+        textSize(24);
+        text("Victoire du joueur " + (currentPlayer + 1) + " ! ", 900, 240);
+    }
+    rectMode(CENTER);
+    if (mouseX > 1390 && mouseX < 1610 && mouseY > 205 && mouseY < 255) {
+        fill(180);
+    } else {
+        fill(200);
+    }
+    rect(1500, 230, 220, 50, 10);
+    fill(0);
+    textAlign(CENTER, CENTER);
+    textSize(20);
+    text("Relancer une partie", 1500, 230);
+}
+function drawSquare() {
+    rectMode(CENTER);
+    textAlign(CENTER, CENTER);
+    textSize(16);
+    for (let i = 0; i < centerX.length; i++) {
+        if (i == 0) {
+            fill(255);
+            rect(centerX[i], centerY, 27, 100);
+        } else if (
+            i == 9 ||
+            i == 18 ||
+            i == 27 ||
+            i == 36 ||
+            i == 45 ||
+            i == 54
+        ) {
+            fill(255, 127, 0);
+            rect(centerX[i], centerY, 27, 100);
+            fill(0);
+            text("0", centerX[i], centerY - 15);
+            text("I", centerX[i], centerY);
+            text("E", centerX[i], centerY + 15);
+        } else if (i == 19) {
+            fill(182, 102, 210);
+            rect(centerX[i], centerY, 27, 100);
+            fill(0);
+            text("H", centerX[i], centerY - 30);
+            text("O", centerX[i], centerY - 15);
+            text("T", centerX[i], centerY);
+            text("E", centerX[i], centerY + 15);
+            text("L", centerX[i], centerY + 30);
+        } else if (i == 42) {
+            fill(255, 228, 54);
+            rect(centerX[i], centerY, 27, 100);
+            fill(0);
+            text("L", centerX[i], centerY - 15);
+            text("A", centerX[i], centerY);
+            text("B", centerX[i], centerY + 15);
+        } else if (i == 58) {
+            fill(90, 94, 107);
+            rect(centerX[i], centerY, 27, 100);
+            fill(0);
+            text("M", centerX[i], centerY - 22.5);
+            text("O", centerX[i], centerY - 7.5);
+            text("R", centerX[i], centerY + 7.5);
+            text("T", centerX[i], centerY + 22.5);
+        } else if (i == 3) {
+            fill(115, 194, 251);
+            rect(centerX[i], centerY, 27, 100);
+            fill(0);
+            text("P", centerX[i], centerY - 30);
+            text("U", centerX[i], centerY - 15);
+            text("I", centerX[i], centerY);
+            text("T", centerX[i], centerY + 15);
+            text("S", centerX[i], centerY + 30);
+        } else if (i == 52) {
+            fill(167, 103, 38);
+            rect(centerX[i], centerY, 27, 100);
+            fill(0);
+            text("P", centerX[i], centerY - 38);
+            text("R", centerX[i], centerY - 23);
+            text("I", centerX[i], centerY - 8);
+            text("S", centerX[i], centerY + 7);
+            text("O", centerX[i], centerY + 22);
+            text("N", centerX[i], centerY + 37);
+        } else {
+            fill(230);
+            rect(centerX[i], centerY, 27, 100);
+        }
+    }
+}
+function drawPlayers() {
+    for (let i = 0; i < positionPlayers.length; i++) {
+        if (i == 0) fill(0);
+        else if (i == 1) fill(255, 0, 0);
+        else if (i == 2) fill(0, 0, 255);
+        else if (i == 3) fill(0, 200, 0);
+        let x = centerX[positionPlayers[i]];
+        let y;
+        if (i == 0) y = centerY - 30;
+        else if (i == 1) y = centerY - 30;
+        else if (i == 2) y = centerY + 30;
+        else y = centerY + 30;
+        let xOffset = i % 2 == 0 ? -7 : 7;
+        rectMode(CENTER);
+        rect(x + xOffset, y, 10, 40);
+    }
+}
+function drawPlay() {
+    fill(circleColor);
+    circle(380, 230, 100);
+    fill(0);
+    textAlign(LEFT_ARROW, BASELINE);
+    textSize(24);
+    text("Jouer", 350, 240);
+}
+function mouseClicked() {
+    if (mouseX > 1390 && mouseX < 1610 && mouseY > 205 && mouseY < 255) {
+        gameOver = false;
+        specialRule = "";
+        messageTurn = "";
+        currentPlayer = 0;
+        positionPlayers = new Array(4);
+        hotelPenalty = new Array(4);
+        wellPenalty = new Array(4);
+        prisonPenalty = new Array(4);
+        return;
+    }
+    if (gameOver) return;
+    if (hotelPenalty[currentPlayer] > 0) {
+        hotelPenalty[currentPlayer]--;
+        currentPlayer = (currentPlayer + 1) % 4;
+        return;
+    }
+    if (wellPenalty[currentPlayer] == true) {
+        currentPlayer = (currentPlayer + 1) % 4;
+        return;
+    }
+    if (prisonPenalty[currentPlayer] == true) {
+        currentPlayer = (currentPlayer + 1) % 4;
+        return;
+    }
+    let distance = dist(mouseX, mouseY, 380, 230);
+    if (distance < 50) {
+        circleColor = color(random(255), random(255), random(255));
+        specialRule = "";
+        let dice1 = random(1, 7);
+        let dice2 = random(1, 7);
+        let oldPosition = positionPlayers[currentPlayer];
+        let move = dice1 + dice2;
+        let newSquare = oldPosition + move;
+        messageTurn =
+            "Dés : " +
+            dice1 +
+            " + " +
+            dice2 +
+            " = " +
+            move +
+            " => Nouvelle case : " +
+            newSquare;
+        if (dice1 == 6 && dice2 == 3) {
+            newSquare = 26;
+            specialRule += "Règle : 6 + 3 => se rendre à la case 26\n";
+        }
+        if (dice1 == 3 && dice2 == 6) {
+            newSquare = 26;
+            specialRule += "Règle : 3 + 6 => se rendre à la case 26\n";
+        }
+        if (dice1 == 4 && dice2 == 5) {
+            newSquare = 53;
+            specialRule += "Règle : 4 + 5 => se rendre à la case 53\n";
+        }
+        if (dice1 == 5 && dice2 == 4) {
+            newSquare = 53;
+            specialRule += "Règle : 5 + 4 => se rendre à la case 53\n";
+        }
+        if (dice1 + dice2 == 6) {
+            newSquare = 12;
+            specialRule += "Règle : 6 => se rendre à la case 12\n";
+        }
+        if (
+            newSquare == 9 ||
+            newSquare == 18 ||
+            newSquare == 27 ||
+            newSquare == 36 ||
+            newSquare == 45 ||
+            newSquare == 54
+        ) {
+            newSquare = newSquare + move;
+            specialRule += "Oie : avancer de nouveau de " + move + "\n";
+        }
+        if (newSquare == 19) {
+            hotelPenalty[currentPlayer] = 2;
+            specialRule += "Hôtel : passer ses deux prochains tours\n";
+        }
+        if (newSquare == 3) {
+            wellPenalty[currentPlayer] = true;
+            specialRule +=
+                "Puits : attendre qu'un autre joueur tombe sur la même case\n";
+            for (let i = 0; i < 4; i++) {
+                if (
+                    i != currentPlayer &&
+                    positionPlayers[i] == 3 &&
+                    wellPenalty[i]
+                ) {
+                    wellPenalty[i] = false;
+                    specialRule += "Puits : un joueur a été libéré\n";
+                    break;
+                }
+            }
+        }
+        if (newSquare == 42) {
+            newSquare = 30;
+            specialRule += "Labyrinthe : se rendre à la case 30\n";
+        }
+        if (newSquare == 52) {
+            let freedSomeone = false;
+            for (let i = 0; i < 4; i++) {
+                if (
+                    i != currentPlayer &&
+                    positionPlayers[i] == 52 &&
+                    prisonPenalty[i]
+                ) {
+                    prisonPenalty[i] = false;
+                    freedSomeone = true;
+                    break;
+                }
+            }
+            if (freedSomeone) {
+                specialRule += "Prison : un joueur a été libéré\n";
+            } else {
+                prisonPenalty[currentPlayer] = true;
+                specialRule +=
+                    "Prison : attendre qu'un autre joueur vous libère\n";
+            }
+        }
+        if (newSquare == 58) {
+            newSquare = 0;
+            specialRule += "Tête de mort : retour à la case Départ\n";
+        }
+        if (newSquare > 63) {
+            newSquare = 63 - (newSquare - 63);
+            specialRule +=
+                "Case 63 dépassée : revenir à la case " + newSquare + "\n";
+        }
+        positionPlayers[currentPlayer] = newSquare;
+        if (newSquare == 63) {
+            gameOver = true;
+            return;
+        }
+        for (let i = 0; i < 4; i++) {
+            if (i != currentPlayer && positionPlayers[i] == newSquare) {
+                positionPlayers[i] = oldPosition;
+                specialRule +=
+                    "Joueur " +
+                    (i + 1) +
+                    " est renvoyé à la case " +
+                    oldPosition +
+                    "\n";
+            }
+        }
+        currentPlayer = (currentPlayer + 1) % 4;
+    }
+}

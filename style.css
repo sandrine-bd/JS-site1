@@ -24,6 +24,10 @@ h1, h2 {
     font-size: 10vw;
 }
 
+h2 {
+    font-size: 5vw;
+}
+
 .feed {
     margin-bottom: 3em;
     border-radius: 2em;
@@ -240,4 +244,18 @@ h1, h2 {
     width: 100vw;
     height: 70vw;
     object-fit: cover;
+}
+
+.game-container {
+    margin-bottom: 5vw;
+    padding: 5vw;
+    padding-top: 0;
+    padding-left: 2vw;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#demineur-game, #jeu-oie-game {
+    margin: 20px;
 }
